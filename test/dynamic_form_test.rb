@@ -292,9 +292,6 @@ class DynamicFormTest < ActionView::TestCase
     # any default works too
     assert_dom_equal %(<div class="error_explanation" id="error_explanation"><h2>2 errors prohibited this monkey from being saved</h2><p>There were problems with the following fields:</p><ul><li>User email can't be empty</li><li>Author name can't be empty</li></ul></div>), error_messages_for(:user, :post, :object_name => "monkey")
 
-    # should space object name
-    assert_dom_equal %(<div class="error_explanation" id="error_explanation"><h2>2 errors prohibited this chunky bacon from being saved</h2><p>There were problems with the following fields:</p><ul><li>User email can't be empty</li><li>Author name can't be empty</li></ul></div>), error_messages_for(:user, :post, :object_name => "chunky_bacon")
-
     # hide header and explanation messages with nil or empty string
     assert_dom_equal %(<div class="error_explanation" id="error_explanation"><ul><li>User email can't be empty</li><li>Author name can't be empty</li></ul></div>), error_messages_for(:user, :post, :header_message => nil, :message => "")
 

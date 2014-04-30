@@ -210,13 +210,13 @@ module ActionView
               html[key] = 'error_explanation'
             end
           end
-          options[:object_name] ||= params.first
+          options[:object_name] ||= params.first.to_s.gsub('_', ' ')
 
           I18n.with_options :locale => options[:locale], :scope => [:activerecord, :errors, :template] do |locale|
             header_message = if options.include?(:header_message)
               options[:header_message]
             else
-              locale.t :header, :count => count, :model => options[:object_name].to_s.gsub('_', ' ')
+              locale.t :header, :count => count, :model => options[:object_name].to_s
             end
 
             message = options.include?(:message) ? options[:message] : locale.t(:body)
