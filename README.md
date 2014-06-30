@@ -47,7 +47,11 @@ Installation
 DynamicForm can be installed as a gem in your `Gemfile`:
 
     gem 'dynamic_form'
-    
+
+After adding the gem, add the following to `config/application.rb`:
+
+    require 'dynamic_form'
+
 or as a plugin by running this command:
 
     rails plugin install git://github.com/joelmoss/dynamic_form.git
