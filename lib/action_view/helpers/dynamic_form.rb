@@ -223,7 +223,7 @@ module ActionView
 
             error_messages = objects.sum do |object|
               object.errors.full_messages.map do |msg|
-                content_tag(:li, msg)
+                content_tag(:li, msg.html_safe)
               end
             end.join.html_safe
 

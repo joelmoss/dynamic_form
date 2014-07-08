@@ -1,3 +1,7 @@
+Changes in this fork
+====================
+Added .html_safe on line 226 in dynamic_form.rb.  This allows html to be added to model error messages and to display properly.
+
 DynamicForm
 ===========
 
